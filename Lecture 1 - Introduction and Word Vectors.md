@@ -74,7 +74,25 @@
 * **<font color=red>Word2vec</font>** is a framework for learning word vectors.
 * Idea:
   * large corpus of text
+  * Every word in a fixed vocabulary is represented by a **vector**
+  * Go through each position *t* in the text, which has a center word *c* and context ("outside") words *o*
+  * Use the **similarity of the word vectors** for *c* and *o* to **calculate the probability** of *o* given *c* (or vice versa)
+  * **Keep adjusting the word vectors** to maximize this probability
+
+![algorithm explanation](C:\Users\msi-user\Desktop\CS224N\pics\1-3.png)
+
+![algorithm explanation](pics/1-4.png)
+
+* Word2vec: objective function
+  * For each position *t = 1, ..., T*, predict context words within a window of fixed size *m*, given center word *w<sub>j</sub>*.
   * 
+
+$$
+Likelihood = L(\theta) = \prod_{t=1}^{T}\prod_{-m\leq j\leq m \&\& j\neq 0}P(w_{t+j}|w_{t};\theta)
+$$
+* 
+    * 
+    * 
 
 ## &sect;4 Word2vec Objective Function Gradients
 
